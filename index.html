@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thiết Kế Mạng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+        }
+        
+        html {
+            box-sizing: border-box;
+        }
+        
+        article {
+            display: flex;
+            margin: 0 2em;
+            flex-wrap: wrap;
+            max-width: none;
+            max-width: calc(38em + 500px);
+        }
+        
+        article {
+            display: flex;
+            margin: 0 2em;
+            flex-wrap: wrap;
+            max-width: none;
+            max-width: calc(38em + 500px);
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        
+        .column {
+            float: left;
+            width: 280px;
+            margin: 30px;
+        }
+        
+        .card {
+            box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+            margin: auto;
+        }
+        
+        .about-section {
+            width: 100%;
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+            background-color: orange;
+        }
+        
+        .container {
+            padding: 0 10px 0 5px;
+        }
+        
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .title {
+            color: grey;
+        }
+        
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+        
+        .picture {
+            margin: 1em 0;
+            padding: 50px;
+        }
+        
+        .login {
+            text-align: center;
+            margin: 1em 0;
+            padding: 50px;
+        }
+        
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+        
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+        
+        .container2 {
+            text-align: left;
+            padding: 16px;
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 10px;
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+        
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+        
+        .closesignup {
+            position: absolute;
+            right: 35px;
+            top: 15px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #f1f1f1;
+        }
+        
+        .closesignup:hover,
+        .closesignup:focus {
+            color: #f44336;
+            cursor: pointer;
+        }
+        
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+        
+        .button {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        .button:active {
+            background-color: #3e8e41;
+            transform: translateY(4px);
+        }
+        
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+        
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+        /* Change styles for span and cancel button on extra small screens */
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="about-section">
+        <h1>Thiết Kế Mạng</h1>
+        <h2>NT113.L11</h2>
+        <h1>Giáo viên: Trần Thị Dung</h1>
+    </div>
+
+    <h2 style="text-align:center">Nhóm 18</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="image.jpg" alt="Đạt" style="width:100%">
+                <div class="container">
+                    <h2>Đinh Tấn Đạt</h2>
+                    <p class="title">MSSV: 18520564</p>
+                    <p>Contact:</p>
+                    <p style="text-align:right">18520564@gm.uit.edu.vn</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="/w3images/team3.jpg" alt="My" style="width:100%">
+                <div class="container">
+                    <h2>Nguyễn Hạnh My</h2>
+                    <p class="title">MSSV: 18521114</p>
+                    <p>Contact:</p>
+                    <p style="text-align:right">18521114@gm.uit.edu.vn</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="/w3images/team3.jpg" alt="Minh" style="width:100%">
+                <div class="container">
+                    <h2>Võ Bảo Minh</h2>
+                    <p class="title">MSSV: 18521111</p>
+                    <p>Contact:</p>
+                    <p style="text-align:right">18521111@gm.uit.edu.vn</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="/w3images/team1.jpg" alt="Duyên" style="width:100%">
+                <div class="container">
+                    <h2>Lê Ngọc Mỹ Duyên</h2>
+                    <p class="title">MSSV: 18520680</p>
+                    <p>Contact:</p>
+                    <p style="text-align:right">18520680@gm.uit.edu.vn</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <article>
+        <div class="picture">
+            <p>
+                <a href="https://www.amazon.com/gp/product/1593279507/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1593279507&amp;linkCode=as2&amp;tag=marijhaver-20&amp;linkId=d8642c0457954f03e27c02b0034d0d60">
+                    <img src="https://eloquentjavascript.net/img/cover.jpg" alt="Cover image" style="border: 1px solid black; max-width: 100%; box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.4)">
+                </a>
+            </p>
+        </div>
+
+        <div class="login">
+            <h1 style="font-family: Georgia, 'Nimbus Roman No9 L', 'Century Schoolbook L', serif;">Login read this book online</h1>
+            <button onclick="document.getElementById('id01').style.display='block'" class="button">Login</button>
+            <button onclick="document.getElementById('id02').style.display='block'" class="button" style="margin: 10px;">Sign Up</button>
+            <div id="id01" class="modal">
+                <form class="modal-content animate" action="login.php" method="POST">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <img src="login.png" alt="Avater" class="avatar">
+                    </div>
+                    <div class="container2">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <label for="pwd"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="pwd" required>
+                        <button type="submit" style="width:100%; height: 50px;" class="button" name="btn_login">Login</button>
+                        <label>
+                        <input type="checkbox" checked="checked" name="remember" style="padding-top: 20px;">Remember me
+                      </label>
+                    </div>
+
+                    <div class="container2" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="button" style="background-color: #f44336;">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </form>
+            </div>
+
+            <div id="id02" class="modal">
+                <span onclick="document.getElementById('id02').style.display='none'" title="Close Modal" class="closesignup">&times;</span>
+                <form class="modal-content" action="./signup.php" method="post">
+                    <div class="container2">
+                        <h1>Sign Up</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <label for="pwd"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="pwd" required>
+                        <!--<label for="pwd-repeat"><b>Repeat Password</b></label>
+                        <input type="password" placeholder="Repeat Password" name="pwd-repeat" required>-->
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px">Remember me
+                        </label>
+                        <p>By creating an account you agree to our <a href="#" style="color: dodgerblue;">Terms & Privacy</a>.</p>
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="button" style="background-color: red;">Cancel</button>
+                            <button type="submit" class="button" style="margin-left: 20px;">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <script>
+                var modal = document.getElementById('id01');
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
+            <script>
+                var modal = document.getElementById('id02');
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+        </div>
+
+    </article>
+
+</body>
+
+</html>
